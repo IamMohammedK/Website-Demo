@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberScan AI | نظام فحص سلامة الروابط والكشف عن التصيد</title>
+    <!-- FontAwesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved text-cyan"></i>
+            <span>CyberScan<span class="text-cyan">.AI</span></span>
+            <span class="badge">مشروع التخرج</span>
+        </div>
+        <div class="status-indicator">
+            <span class="dot active"></span>
+            <span>المحرك يعمل (Online)</span>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <!-- Main Content Area -->
+        <main class="content-area">
+            
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1>نظام فحص الروابط والكشف عن التصيد</h1>
+                <p>قم بإدخال أي رابط للتحقق من سلامته عبر خوارزميات التحليل الهيكلي ومحرك الذكاء الاصطناعي لكشف البرمجيات الخبيثة والتصيد الإلكتروني.</p>
+                
+                <!-- URL Input Form -->
+                <form id="scanForm" class="search-box">
+                    <i class="fa-solid fa-link icon-link"></i>
+                    <input type="text" id="urlInput" placeholder="https://example.com/login..." required autocomplete="off">
+                    <button type="submit" id="scanBtn">
+                        <i class="fa-solid fa-magnifying-glass"></i> فحص الرابط
+                    </button>
+                </form>
+            </section>
+
+            <!-- Results Dashboard (Hidden by default) -->
+            <section id="resultsSection" class="results-dashboard hidden">
+                
+                <div class="cards-grid">
+                    <!-- Safety Score Gauge Card -->
+                    <div class="card score-card">
+                        <h3><i class="fa-solid fa-gauge-high"></i> مؤشر الأمان</h3>
+                        <div class="gauge-container">
+                            <div class="circle-gauge">
+                                <span id="scoreDisplay" class="score-value">0</span>
+                                <span class="score-max">/100</span>
+                            </div>
+                        </div>
+                        <div id="statusBadge" class="status-tag">جاري التقييم</div>
+                    </div>
+
+                    <!-- Domain Details Card -->
+                    <div class="card details-card">
+                        <h3><i class="fa-solid fa-circle-info text-cyan"></i> تفاصيل النطاق (Domain Metadata)</h3>
+                        <div class="details-list">
+                            <div class="detail-item">
+                                <span class="label">الرابط المفحوص:</span>
+                                <span id="resUrl" class="value text-truncate">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">اسم النطاق (Domain):</span>
+                                <span id="resDomain" class="value text-cyan">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">بروتوكول التشفير:</span>
+                                <span id="resProtocol" class="value">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warnings & Security Analysis Card -->
+                <div class="card warnings-card">
+                    <h3><i class="fa-solid fa-triangle-exclamation text-warning"></i> ملاحظات الفحص والتحذيرات</h3>
+                    <div id="warningsContainer" class="warnings-list">
+                        <!-- Dynamic Warnings Inserted Here -->
+                    </div>
+                </div>
+
+                <!-- AI Analysis Card -->
+                <div class="card ai-card">
+                    <div class="card-header-flex">
+                        <h3><i class="fa-solid fa-brain text-purple"></i> تقرير الذكاء الاصطناعي (Gemini AI)</h3>
+                        <button id="aiBtn" class="btn-purple">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> توليد تحليل ذكي
+                        </button>
+                    </div>
+                    <div id="aiReportContent" class="ai-content">
+                        اضغط على "توليد تحليل ذكي" للحصول على تقرير متعمق من نموذج الذكاء الاصطناعي.
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
